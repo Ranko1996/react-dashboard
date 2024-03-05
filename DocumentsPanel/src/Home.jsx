@@ -1,10 +1,10 @@
 import React from 'react'
-import 
-{ BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
- from 'react-icons/bs'
- import 
- { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
- from 'recharts';
+import { useState } from 'react';
+import Add from './Add';
+import { BsFillArchiveFill } from 'react-icons/bs'
+import { 
+    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line 
+} from 'recharts';
 
 function Home() {
 
@@ -52,40 +52,49 @@ function Home() {
           amt: 2100,
         },
       ];
+      const [isModalOpen, setIsModalOpen] = useState(false);
      
+      const handleAddDocumentClick = () => {
+        // console.log("Add Document button clicked!");
+        setIsModalOpen(true); // Otvorite modal
+
+        // Ovdje možete dodati logiku za dodavanje novog dokumenta
+    }
 
   return (
     <main className='main-container'>
         <div className='main-title'>
-            <h3>DASHBOARD</h3>
+            <h3>DOCUMENTS</h3>
+            <button onClick={handleAddDocumentClick} className="add-document-btn">Add Document</button>
         </div>
-
+        {isModalOpen && <Add setOpen={setIsModalOpen} />}
+    
         <div className='main-cards'>
             <div className='card'>
                 <div className='card-inner'>
-                    <h3>PRODUCTS</h3>
+                    <h3>OFFICIAL DOCUMENTS</h3>
                     <BsFillArchiveFill className='card_icon'/>
                 </div>
                 <h1>300</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
-                    <h3>CATEGORIES</h3>
-                    <BsFillGrid3X3GapFill className='card_icon'/>
+                    <h3>TEHNICAL DOCUMENTS</h3>
+                    <BsFillArchiveFill className='card_icon'/>
                 </div>
                 <h1>12</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
-                    <h3>CUSTOMERS</h3>
-                    <BsPeopleFill className='card_icon'/>
+                    <h3>FINANCIAL DOCUMENTS</h3>
+                    <BsFillArchiveFill className='card_icon'/>
                 </div>
                 <h1>33</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
-                    <h3>ALERTS</h3>
-                    <BsFillBellFill className='card_icon'/>
+                    <h3>EDUCATIONAL DOCUMENTS</h3>
+                    <BsFillArchiveFill className='card_icon'/>
                 </div>
                 <h1>42</h1>
             </div>
