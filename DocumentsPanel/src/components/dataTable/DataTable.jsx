@@ -1,0 +1,54 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import { DataGrid } from '@mui/x-data-grid';
+import "./dataTable.css"
+
+const columns = [
+  { field: 'id', headerName: 'ID', width: 90 },
+  { field: 'name', headerName: 'Name', width: 150 },
+  { field: 'customerId', headerName: 'Customer ID', width: 150 },
+  { field: 'startDate', headerName: 'Start Date', width: 150 },
+  { field: 'duration', headerName: 'Duration', width: 150 },
+  { field: 'comment', headerName: 'Comment', width: 200 },
+  { field: 'contractValue', headerName: 'Contract Value', width: 150 },
+  { field: 'type', headerName: 'Type', width: 150 },
+];
+
+const documentsData = [
+    { "id": 1, "name": "Ugovor A", "customerId": 1, "startDate": "2023-01-01", "duration": "12 months", "comment": "Održavanje softvera", "contractValue": "10000", "type": "TEHNICAL DOCUMENTS" },
+    { "id": 2, "name": "Ugovor B", "customerId": 2, "startDate": "2023-02-01", "duration": "24 months", "comment": "Izgradnja web stranice", "contractValue": "20000", "type": "OFFICIAL DOCUMENTS" },
+    { "id": 3, "name": "Ugovor C", "customerId": 3, "startDate": "2023-03-01", "duration": "6 months", "comment": "Savjetovanje za IT sigurnost", "contractValue": "15000", "type": "FINANCIAL DOCUMENTS" },
+    { "id": 4, "name": "Ugovor D", "customerId": 4, "startDate": "2023-04-01", "duration": "18 months", "comment": "Upravljanje društvenim mrežama", "contractValue": "12000", "type": "EDUCATIONAL DOCUMENTS" },
+    { "id": 5, "name": "Ugovor E", "customerId": 5, "startDate": "2023-05-01", "duration": "36 months", "comment": "Proizvodnja i distribucija", "contractValue": "30000", "type": "OFFICIAL DOCUMENTS" },
+    { "id": 6, "name": "Ugovor F", "customerId": 1, "startDate": "2023-06-01", "duration": "3 months", "comment": "Marketinške kampanje", "contractValue": "7000", "type": "TEHNICAL DOCUMENTS" },
+    { "id": 7, "name": "Ugovor G", "customerId": 2, "startDate": "2023-07-01", "duration": "12 months", "comment": "Konsultantske usluge", "contractValue": "18000", "type": "FINANCIAL DOCUMENTS" },
+    { "id": 8, "name": "Ugovor H", "customerId": 3, "startDate": "2023-08-01", "duration": "24 months", "comment": "Razvoj mobilnih aplikacija", "contractValue": "25000", "type": "EDUCATIONAL DOCUMENTS" },
+    { "id": 9, "name": "Ugovor I", "customerId": 4, "startDate": "2023-09-01", "duration": "15 months", "comment": "Usluga cloud pohrane", "contractValue": "9500", "type": "OFFICIAL DOCUMENTS" },
+    { "id": 10, "name": "Ugovor J", "customerId": 5, "startDate": "2023-10-01", "duration": "18 months", "comment": "Sistem sigurnosti", "contractValue": "22000", "type": "TEHNICAL DOCUMENTS" },
+    { "id": 11, "name": "Ugovor K", "customerId": 1, "startDate": "2023-11-01", "duration": "12 months", "comment": "Izrada e-commerce platforme", "contractValue": "27000", "type": "FINANCIAL DOCUMENTS" },
+    { "id": 12, "name": "Ugovor L", "customerId": 2, "startDate": "2023-12-01", "duration": "6 months", "comment": "Digitalno oglašavanje", "contractValue": "12000", "type": "EDUCATIONAL DOCUMENTS" },
+    { "id": 13, "name": "Ugovor M", "customerId": 3, "startDate": "2024-01-01", "duration": "9 months", "comment": "SEO optimizacija", "contractValue": "10000", "type": "OFFICIAL DOCUMENTS" },
+    { "id": 14, "name": "Ugovor N", "customerId": 4, "startDate": "2024-02-01", "duration": "12 months", "comment": "Branding i dizajn", "contractValue": "20000", "type": "TEHNICAL DOCUMENTS" },
+    { "id": 15, "name": "Ugovor O", "customerId": 5, "startDate": "2024-03-01", "duration": "24 months", "comment": "PR usluge", "contractValue": "30000", "type": "FINANCIAL DOCUMENTS" }
+];
+
+export default function DataGridTable() {
+  return (
+    <Box sx={{ height: 400, width: '100%', backgroundColor: 'white' }}> 
+      <DataGrid
+        rows={documentsData}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 5,
+            },
+          },
+        }}
+        pageSizeOptions={[5]}
+        checkboxSelection
+        disableRowSelectionOnClick
+      />
+    </Box>
+  );
+}

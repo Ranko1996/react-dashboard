@@ -1,9 +1,10 @@
 import React from 'react'
+import DataGridTable from './components/dataTable/DataTable'
 
 const Documents = () => {
   return (
     <div>
-      ASDASDASD
+      <DataGridTable />
     </div>
   )
 }
