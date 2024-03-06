@@ -5,8 +5,29 @@ import { BsFillArchiveFill } from 'react-icons/bs'
 import { 
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line 
 } from 'recharts';
+import BarChartBox from './components/barChartBox/BarChartBox';
+import PieChartBox from './components/pieCartBox/PieChartBox';
 
-function Home() {
+function Home({ documents, setDocuments, clients, setClients }) {
+
+// Prvo definirajte objekte koji će brojati svaki tip dokumenata
+let documentCounts = {
+    "FINANCIAL DOCUMENTS": 0,
+    "TEHNICAL DOCUMENTS": 0,
+    "EDUCATIONAL DOCUMENTS": 0,
+    "OFFICIAL DOCUMENTS": 0
+};
+let documentCountsArray = [];
+// Iterirajte kroz niz `documentsData` i brojite tipove dokumenata
+documents.forEach(document => {
+    documentCounts[document.type] += 1;
+});
+for (const type in documentCounts) {
+    documentCountsArray.push({ type: type, count: documentCounts[type] });
+}
+// console.log(documentCountsArray);
+
+// Ispisujemo rezultate
 
     const data = [
         {
@@ -55,7 +76,6 @@ function Home() {
       const [isModalOpen, setIsModalOpen] = useState(false);
      
       const handleAddDocumentClick = () => {
-        // console.log("Add Document button clicked!");
         setIsModalOpen(true); // Otvorite modal
 
         // Ovdje možete dodati logiku za dodavanje novog dokumenta
@@ -67,39 +87,42 @@ function Home() {
             <h3>DOCUMENTS</h3>
             <button onClick={handleAddDocumentClick} className="add-document-btn">Add Document</button>
         </div>
-        {isModalOpen && <Add setOpen={setIsModalOpen} />}
+        {isModalOpen && <Add setOpen={setIsModalOpen} clients={clients} documents={documents} setDocuments={setDocuments} />}
     
         <div className='main-cards'>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>OFFICIAL DOCUMENTS</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <h1>300</h1>
+        <div className='card'>
+            <div className='card-inner'>
+                <h3>OFFICIAL DOCUMENTS</h3>
+                <BsFillArchiveFill className='card_icon'/>
             </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>TEHNICAL DOCUMENTS</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <h1>12</h1>
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>FINANCIAL DOCUMENTS</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <h1>33</h1>
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>EDUCATIONAL DOCUMENTS</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <h1>42</h1>
-            </div>
+            <h1>{documentCounts["OFFICIAL DOCUMENTS"]}</h1>
         </div>
-
+        <div className='card'>
+            <div className='card-inner'>
+                <h3>TEHNICAL DOCUMENTS</h3>
+                <BsFillArchiveFill className='card_icon'/>
+            </div>
+            <h1>{documentCounts["TEHNICAL DOCUMENTS"]}</h1>
+        </div>
+        <div className='card'>
+            <div className='card-inner'>
+                <h3>FINANCIAL DOCUMENTS</h3>
+                <BsFillArchiveFill className='card_icon'/>
+            </div>
+            <h1>{documentCounts["FINANCIAL DOCUMENTS"]}</h1>
+        </div>
+        <div className='card'>
+            <div className='card-inner'>
+                <h3>EDUCATIONAL DOCUMENTS</h3>
+                <BsFillArchiveFill className='card_icon'/>
+            </div>
+            <h1>{documentCounts["EDUCATIONAL DOCUMENTS"]}</h1>
+        </div>
+    </div>
+    <div className='charts'>
+        <PieChartBox documents={documentCountsArray} />
+    </div>
+        {/* <BarChartBox data={documentCountsArray} />
         <div className='charts'>
             <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -122,7 +145,8 @@ function Home() {
                 <Bar dataKey="uv" fill="#82ca9d" />
                 </BarChart>
             </ResponsiveContainer>
-
+            
+        
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                 width={500}
@@ -144,8 +168,7 @@ function Home() {
                 <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                 </LineChart>
             </ResponsiveContainer>
-
-        </div>
+        </div> */}
     </main>
   )
 }
