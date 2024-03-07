@@ -50,8 +50,7 @@ const Add = ({ setOpen, clients, documents, setDocuments }) => {
         startDate,
         duration,
     });
-      console.log(documents);
-    // setOpen(false); // Zatvara modal
+    setOpen(false); // Zatvara modal
 };
 
 

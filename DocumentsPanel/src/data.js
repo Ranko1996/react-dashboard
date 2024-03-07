@@ -5,13 +5,7 @@ export const clientsData = [
     { "id": 4, "name": "Soylent Corp" },
     { "id": 5, "name": "Vandelay Industries" }
 ];
-// export const documentsData = [
-//     { "id": 1, "name": "Ugovor A", "customerId": 1, "startDate": "2023-01-01", "duration": "12 months", "comment": "Održavanje softvera", "contractValue": "10000", "type": "TEHNICAL DOCUMENTS" },
-//     { "id": 2, "name": "Ugovor B", "customerId": 2, "startDate": "2023-02-01", "duration": "24 months", "comment": "Izgradnja web stranice", "contractValue": "20000", "type": "OFFICIAL DOCUMENTS" },
-//     { "id": 3, "name": "Ugovor C", "customerId": 3, "startDate": "2023-03-01", "duration": "6 months", "comment": "Savjetovanje za IT sigurnost", "contractValue": "15000", "type": "FINANCIAL DOCUMENTS" },
-//     { "id": 4, "name": "Ugovor D", "customerId": 4, "startDate": "2023-04-01", "duration": "18 months", "comment": "Upravljanje društvenim mrežama", "contractValue": "12000", "type": "EDUCATIONAL DOCUMENTS" },
-//     // Dodajte ostale dokumente slično, promijenite "customerId" kako bi odgovarao jednom od klijenata
-// ];
+
 export const documentsData = [
     { "id": 1, "name": "Ugovor A", "customerId": 1, "startDate": "2023-01-01", "duration": "12 months", "comment": "Održavanje softvera", "contractValue": "10000", "type": "TEHNICAL DOCUMENTS" },
     { "id": 2, "name": "Ugovor B", "customerId": 2, "startDate": "2023-02-01", "duration": "24 months", "comment": "Izgradnja web stranice", "contractValue": "20000", "type": "OFFICIAL DOCUMENTS" },

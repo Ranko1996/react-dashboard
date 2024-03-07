@@ -6,6 +6,16 @@ import AddButton from './components/button/AddButton';
 
 
 const Documents = ({ documents, setDocuments, clients, setClients }) => {
+    const columns = [
+        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'name', headerName: 'Name', width: 150 },
+        { field: 'customerId', headerName: 'Customer ID', width: 150 },
+        { field: 'startDate', headerName: 'Start Date', width: 150 },
+        { field: 'duration', headerName: 'Duration', width: 150 },
+        { field: 'comment', headerName: 'Comment', width: 200 },
+        { field: 'contractValue', headerName: 'Contract Value', width: 150 },
+        { field: 'type', headerName: 'Type', width: 150 },
+      ];
     
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleAddDocumentClick = () => {
@@ -20,7 +30,7 @@ const Documents = ({ documents, setDocuments, clients, setClients }) => {
         <AddButton onClick={handleAddDocumentClick}>Add Document</AddButton>
     </div>
     {isModalOpen && <Add setOpen={setIsModalOpen} clients={clients} documents={documents} setDocuments={setDocuments} />}
-      <DataGridTable documents={documents} />
+      <DataGridTable  data={documents} columns={columns} />
     </div>
   )
 }

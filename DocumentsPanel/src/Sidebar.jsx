@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import 
-{BsFillEnvelopePaperFill, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
+{BsFillEnvelopePaperFill, BsGrid1X2Fill, BsFillArchiveFill ,BsFillGrid3X3GapFill, BsPeopleFill, 
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
  from 'react-icons/bs'
 
@@ -24,6 +24,11 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
             <li className='sidebar-list-item'>
                 <Link to="/documents">
                     <BsFillArchiveFill className='icon'/> Documents               
+                </Link>
+            </li>
+            <li className='sidebar-list-item'>
+                <Link to="/clients">
+                    <BsPeopleFill className='icon'/> Clients               
                 </Link>
             </li>
             {/* <li className='sidebar-list-item'>
