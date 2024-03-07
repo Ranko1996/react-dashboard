@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import "./add.css";
 
-const Add = ({ setOpen, setClients }) => {
+const AddClient = ({ setOpen, setClients }) => {
   const [clientName, setClientName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Stvaranje novog objekta klijenta
     const newClient = {
-      id: Math.random().toString(36).substr(2, 9), // Generiranje jedinstvenog ID-a
+      id: Math.random().toString(36).substr(2, 9),
       name: clientName,
     };
 
-    // Dodavanje novog klijenta u stanje koristeći setClients
     setClients((prevClients) => [...prevClients, newClient]);
 
-    // Resetiranje inputa nakon dodavanja klijenta
     setClientName("");
 
-    // Zatvaranje modalnog prozora
     setOpen(false);
   };
 
@@ -47,4 +42,4 @@ const Add = ({ setOpen, setClients }) => {
   );
 };
 
-export default Add;
+export default AddClient;

@@ -13,7 +13,6 @@ const Documents = ({ documents, setDocuments, clients, setClients }) => {
         { field: 'startDate', headerName: 'Start Date', width: 150 },
         { field: 'duration', headerName: 'Duration', width: 150 },
         { field: 'comment', headerName: 'Comment', width: 200 },
-        { field: 'contractValue', headerName: 'Contract Value', width: 150 },
         { field: 'type', headerName: 'Type', width: 150 },
       ];
     

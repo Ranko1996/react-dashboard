@@ -2,6 +2,7 @@ import { useState } from 'react';
 import DataGridTable from './components/dataTable/DataTable'
 import Add from './AddClient';
 import AddButton from './components/button/AddButton';
+import AddClient from './AddClient';
 
 
 const Clients = ({ documents, setDocuments, clients, setClients }) => {
@@ -20,7 +21,7 @@ const Clients = ({ documents, setDocuments, clients, setClients }) => {
         <h3>DOCUMENTS</h3>
         <AddButton onClick={handleAddClientClick}>Add Client</AddButton>
     </div>
-    {isModalOpen && <Add setOpen={setIsModalOpen} clients={clients} setClients={setClients} />}
+    {isModalOpen && <AddClient setOpen={setIsModalOpen} clients={clients} setClients={setClients} />}
       <DataGridTable  data={clients} columns={columns} />
     </div>
   )
