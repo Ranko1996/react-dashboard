@@ -91,6 +91,12 @@ body {
   font-size: 18px;
 }
 
+.sidebar-list-item-link {
+  text-decoration: none; /* Uklanja podcrtavanje linkova */
+  color: inherit; /* Nasljeđuje boju teksta od roditeljskog elementa */
+}
+
+
 .sidebar-list-item:hover {
   background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;

@@ -2,13 +2,12 @@ import { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { clientsData, documentsData } from './data';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Home from './Home';
-import Documents from './Documents';
-import Clients from './Clients';
-// Uvozite dodatne stranice koje želite uključiti
-// import About from './About'; // Primer dodatne stranice
+import Sidebar from './pages/Sidebar';
+import Header from './pages/Header';
+import Home from './pages/Home';
+import Documents from './pages/Documents';
+import Clients from './pages/Clients';
+
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);

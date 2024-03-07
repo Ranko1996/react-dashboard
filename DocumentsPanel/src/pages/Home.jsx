@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
-import Add from './Add';
+import Add from '../components/add/Add';
 import { BsFillArchiveFill } from 'react-icons/bs'
 import { 
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line 
 } from 'recharts';
-import PieChartBox from './components/pieCartBox/PieChartBox';
-import AddButton from './components/button/AddButton';
+import PieChartBox from '../components/pieCartBox/PieChartBox';
+import AddButton from '../components/button/AddButton';
 
 function Home({ documents, setDocuments, clients, setClients }) {
 
@@ -39,7 +39,7 @@ const data1 = clients.map(client => {
     <main className='main-container'>
         <div className='main-title'>
             <h3>DOCUMENTS</h3>
-            <AddButton onClick={handleAddDocumentClick}>Add Document</AddButton>
+         
         </div>
         {isModalOpen && <Add setOpen={setIsModalOpen} clients={clients} documents={documents} setDocuments={setDocuments} />}
     

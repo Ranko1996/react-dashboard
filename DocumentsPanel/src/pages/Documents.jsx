@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
-import DataGridTable from './components/dataTable/DataTable'
-import Add from './Add';
-import AddButton from './components/button/AddButton';
+import DataGridTable from '../components/dataTable/DataTable'
+import Add from '../components/add/Add';
+import AddButton from '../components/button/AddButton';
 
 
 const Documents = ({ documents, setDocuments, clients, setClients }) => {
