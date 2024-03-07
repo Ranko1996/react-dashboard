@@ -1,0 +1,14 @@
+.add-document-btn {
+    background-color: #4caf50; /* Zelena pozadina */
+    color: white; /* Bijeli tekst */
+    padding: 10px 20px; /* Prostor oko teksta */
+    font-size: 16px; /* Veličina teksta */
+    border: none; /* Uklanjanje granice */
+    border-radius: 4px; /* Zaobljeni rubovi */
+    cursor: pointer; /* Promjena kursora na pokazivač */
+  }
+  
+  .add-document-btn:hover {
+    background-color: #45a049; /* Tamnija zelena pozadina na hover */
+  }
+  

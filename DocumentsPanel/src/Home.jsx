@@ -7,6 +7,7 @@ import {
 } from 'recharts';
 import BarChartBox from './components/barChartBox/BarChartBox';
 import PieChartBox from './components/pieCartBox/PieChartBox';
+import AddButton from './components/button/AddButton';
 
 function Home({ documents, setDocuments, clients, setClients }) {
 
@@ -79,13 +80,13 @@ for (const type in documentCounts) {
         setIsModalOpen(true); // Otvorite modal
 
         // Ovdje možete dodati logiku za dodavanje novog dokumenta
-    }
+        }
 
   return (
     <main className='main-container'>
         <div className='main-title'>
             <h3>DOCUMENTS</h3>
-            <button onClick={handleAddDocumentClick} className="add-document-btn">Add Document</button>
+            <AddButton onClick={handleAddDocumentClick}>Add Document</AddButton>
         </div>
         {isModalOpen && <Add setOpen={setIsModalOpen} clients={clients} documents={documents} setDocuments={setDocuments} />}
     
@@ -121,6 +122,27 @@ for (const type in documentCounts) {
     </div>
     <div className='charts'>
         <PieChartBox documents={documentCountsArray} />
+        <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+            width={500}
+            height={300}
+            data={data}
+            margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+            }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="pv" fill="#8884d8" />
+                <Bar dataKey="uv" fill="#82ca9d" />
+                </BarChart>
+            </ResponsiveContainer>
     </div>
         {/* <BarChartBox data={documentCountsArray} />
         <div className='charts'>

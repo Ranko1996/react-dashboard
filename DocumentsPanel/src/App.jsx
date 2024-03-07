@@ -25,7 +25,7 @@ function App() {
         <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
         <Routes>
           <Route path="/" element={<Home documents={documents} setDocuments={setDocuments} clients={clients} setClients={setClients} />} />
-          <Route path="/documents" element={<Documents /> } />
+          <Route path="/documents" element={<Documents documents={documents} setDocuments={setDocuments} clients={clients} setClients={setClients} /> } />
    
         </Routes>
       </div>
