@@ -7,6 +7,7 @@ import Header from './pages/Header';
 import Home from './pages/Home';
 import Documents from './pages/Documents';
 import Clients from './pages/Clients';
+import DocumentsStore from './stores/DocumentStore.js'
 
 
 function App() {
